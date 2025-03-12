@@ -23,6 +23,7 @@
 }
 
 .modalContent{
+    font-family: var(--font-family);
     padding: 25px;
     background-color: #fff;
     border-radius: 0px 16px 16px 0;
@@ -32,4 +33,5 @@
     flex-direction: column;
     gap: 48px;
     align-items: center;
+    overflow-y: scroll;
 }
