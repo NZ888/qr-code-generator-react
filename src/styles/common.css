@@ -1,0 +1,22 @@
+:root {
+    --btnColor : #000000;
+    --delBtnColor : #F60B0B;
+}
+
+body{
+
+}
+/* Для Chrome, Edge, Safari */
+::-webkit-scrollbar {
+    display: none;
+}
+
+/* Для Firefox */
+* {
+    scrollbar-width: none;
+}
+
+/* Для IE и Edge (старые версии) */
+html {
+    -ms-overflow-style: none;
+}

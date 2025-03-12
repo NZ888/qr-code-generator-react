@@ -1,0 +1,35 @@
+:root{
+    --font-family : "Poppins", sans-serif;
+}
+
+.modal{
+    position:fixed;
+    top:0;
+    left:0;
+    right:0;
+    bottom:0;
+    opacity: 0;
+    visibility: hidden;
+    background-color: rgba(0, 0, 0, 0.5);
+    transition: opacity 0.3s ease;
+}
+
+.modal.active{
+    opacity: 1;
+    visibility: visible;
+    display: flex;
+    z-index: 2;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.modalContent{
+    padding: 25px;
+    background-color: #fff;
+    border-radius: 0px 16px 16px 0;
+    width: 396px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 48px;
+    align-items: center;
+}

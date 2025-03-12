@@ -1,0 +1,114 @@
+:root{
+    --font-family : "Poppins", sans-serif;
+}
+
+.container{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 700px;
+    justify-content: center;
+    align-items: center;
+    gap: 60px;
+}
+
+.qrCode{
+
+}
+
+.input{
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+}
+
+.input input{
+    border-radius: 13px;
+    width: 651px;
+    height: 100px;
+    background: #d9d9d9;
+    padding: 20px;
+    font-family: var(--font-family);
+    font-weight: 500;
+    font-size: 36px;
+    color: #636363;
+}
+
+.input input::placeholder{
+    text-align: center;
+}
+
+.input button{
+    border-radius: 13px;
+    width: 196px;
+    height: 100px;
+    font-family: var(--font-family);
+    font-weight: 500;
+    font-size: 32px;
+    color: #fff;
+    background: #000;
+}
+
+.moreOption a{
+    font-family: var(--font-family);
+    font-weight: 500;
+    font-size: 24px;
+    color: #585555;
+}
+
+@media screen and (max-width: 875px){
+    .input input{
+        width: 451px;
+        height: 70px;
+        font-size: 23px;
+
+    }
+    .input button{
+        width: 180px;
+        height: 70px;
+    }
+}
+@media screen and (max-width: 660px){
+    .input input{
+        width: 400px;
+        height: 70px;
+        font-size: 21px;
+
+    }
+    .input button{
+        width: 120px;
+        height: 70px;
+        font-size: 21px;
+    }
+}
+@media screen and (max-width: 545px){
+    .input input{
+        width: 300px;
+        height: 50px;
+        font-size: 15px;
+
+    }
+    .input button{
+        width: 100px;
+        height: 50px;
+        font-size: 18px;
+    }
+}
+
+@media screen and (max-width: 425px){
+    .input{
+        flex-direction: column;
+        align-items: center;
+    }
+    .input input{
+        width: 300px;
+        height: 50px;
+        font-size: 15px;
+
+    }
+    .input button{
+        width: 100px;
+        height: 50px;
+        font-size: 18px;
+    }
+}

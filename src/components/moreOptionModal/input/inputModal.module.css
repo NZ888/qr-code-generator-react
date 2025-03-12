@@ -1,0 +1,23 @@
+:root{
+    --font-family : "Poppins", sans-serif;
+}
+
+.myInput{
+    margin-bottom: 55px;
+    border: 1px solid #000;
+    border-radius: 5px;
+    width: 242px;
+    height: 32px;
+    background: #fffcfc;
+    font-family: var(--font-family);
+}
+.myLabel {
+    margin-left: 3px;
+    display: block;
+    margin-bottom: 4px;
+    font-family: var(--font-family);
+    font-weight: 500;
+    font-size: 14px;
+    color: #000;
+    cursor: default;
+}
