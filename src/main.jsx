@@ -5,11 +5,14 @@ import AOS from 'aos';
 import 'aos/dist/aos.css';
 AOS.init();
 import { BrowserRouter } from "react-router-dom";
+import {LinkProvider} from "./components/contexts/LinkContext.jsx";
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
-      <BrowserRouter>
-          <App />
-      </BrowserRouter>
-  </StrictMode>,
+          <BrowserRouter>
+                  <LinkProvider>
+                      <App />
+                  </LinkProvider>
+          </BrowserRouter>
+  </StrictMode>
 )

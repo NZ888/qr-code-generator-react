@@ -1,20 +1,39 @@
-import React, { useRef, useState } from 'react';
+import React, {useContext, useEffect, useRef, useState} from 'react';
 import classes from "./generator.module.css";
 import { QRCodeSVG } from 'qrcode.react';
 import { saveAs } from 'file-saver';
 import domtoimage from 'dom-to-image';
 
 import MoreOptionModal from "../moreOptionModal/MoreOptionModal.jsx";
+import {LinkContext} from "../contexts/LinkContext.jsx";
 
 const Generator = () => {
     const [link, setLink] = useState("");
     const svgRef = useRef(null);
     const [modal, setModal] = useState(false);
 
-    const handleDownloadPNG = () => {
+    const { regeneratedLink } = useContext(LinkContext);
+
+    useEffect(() => {
+        if (regeneratedLink) {
+            setLink(regeneratedLink);
+        }
+    }, [regeneratedLink])
+
+
+    const handleDownloadPNG = (link) => {
         domtoimage.toBlob(svgRef.current)
             .then((blob) => saveAs(blob, 'Qr.png'))
             .catch((err) => console.error("error convert to PNG:", err));
+
+        if (link !== "") {
+            const storageLinks = localStorage.getItem("links");
+            let links = storageLinks ? JSON.parse(storageLinks) : [];
+
+            links.push(link);
+            localStorage.setItem("links", JSON.stringify(links));
+        }
+
     };
 
     const handleClick = () => {
@@ -39,7 +58,7 @@ const Generator = () => {
                     value={link}
                     onChange={handleChange}
                 />
-                <button onClick={handleDownloadPNG}>Download</button>
+                <button onClick={()=> handleDownloadPNG(link)}>Download</button>
             </div>
             <div className={classes.moreOption}>
                 {window.innerWidth >= 720 ? <a href="#!" onClick={handleClick}>More options...</a> : null }

@@ -54,6 +54,16 @@ const MoreOptionModal = ({ modal, setModal, baseValue }) => {
         domtoimage.toBlob(svgRef.current)
             .then((blob) => saveAs(blob, 'Qr.png'))
             .catch((err) => console.error("error convert to PNG:", err));
+
+        if (form.value !== "") {
+            const storageLinks = localStorage.getItem("links");
+            let links = storageLinks ? JSON.parse(storageLinks) : [];
+
+            links.push(form.value);
+            localStorage.setItem("links", JSON.stringify(links));
+        }
+
+
     };
 
 
